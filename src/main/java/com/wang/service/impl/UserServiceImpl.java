@@ -14,13 +14,5 @@ import java.util.List;
  * @Date 2018/5/25 10:06
  */
 @Service
-public class UserServiceImpl implements IUserService {
-
-    @Autowired
-    private UserMapper userMapper;
-
-    @Override
-    public List<User> selectAll() {
-        return userMapper.selectAll();
-    }
+public class UserServiceImpl extends BaseServiceImpl<User> implements IUserService {
 }

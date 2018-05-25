@@ -4,15 +4,20 @@
 
 1. SpringBoot整合Mybatis示例
 2. 继续整合分页插件PageHelper
+3. 继续整合通用Mapper插件
+4. Maven集成Mybatis Geneator
 
 #### 软件架构
 
-1. SpringBoot + Mybatis + PageHelper
+1. SpringBoot + Mybatis + PageHelper + 通用Mapper
 
 #### 安装教程
 
 1. 解压后执行src\main\resources\sql\MySQL.sql脚本创建数据库和表
-2. 正常启动即可
+2. 在pom.xml这一级目录(即项目根目录下)的命令行窗口执行(前提是配置了mvn)(IDEA可以直接在Maven窗口Plugins中双击执行)，创建Entity和Mapper后正常启动即可
+```
+mvn mybatis-generator:generate
+```
 
 #### 使用说明
 

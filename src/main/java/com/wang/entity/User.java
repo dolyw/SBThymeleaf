@@ -1,35 +1,39 @@
 package com.wang.entity;
 
 import java.util.Date;
+import javax.persistence.*;
 
+@Table(name = "user")
 public class User {
     /**
      * ID
      */
+    @Id
+    @GeneratedValue(generator = "JDBC")
     private Integer id;
 
     /**
-     * ÕÊºÅ
+     * å¸å·
      */
     private String account;
 
     /**
-     * ÃÜÂë
+     * å¯†ç 
      */
     private String password;
 
     /**
-     * êÇ³Æ
+     * æ˜µç§°
      */
     private String username;
 
     /**
-     * ×¢²áÊ±¼ä
+     * æ³¨å†Œæ—¶é—´
      */
     private Date regtime;
 
     /**
-     * »ñÈ¡ID
+     * è·å–ID
      *
      * @return id - ID
      */
@@ -38,7 +42,7 @@ public class User {
     }
 
     /**
-     * ÉèÖÃID
+     * è®¾ç½®ID
      *
      * @param id ID
      */
@@ -47,72 +51,72 @@ public class User {
     }
 
     /**
-     * »ñÈ¡ÕÊºÅ
+     * è·å–å¸å·
      *
-     * @return account - ÕÊºÅ
+     * @return account - å¸å·
      */
     public String getAccount() {
         return account;
     }
 
     /**
-     * ÉèÖÃÕÊºÅ
+     * è®¾ç½®å¸å·
      *
-     * @param account ÕÊºÅ
+     * @param account å¸å·
      */
     public void setAccount(String account) {
         this.account = account;
     }
 
     /**
-     * »ñÈ¡ÃÜÂë
+     * è·å–å¯†ç 
      *
-     * @return password - ÃÜÂë
+     * @return password - å¯†ç 
      */
     public String getPassword() {
         return password;
     }
 
     /**
-     * ÉèÖÃÃÜÂë
+     * è®¾ç½®å¯†ç 
      *
-     * @param password ÃÜÂë
+     * @param password å¯†ç 
      */
     public void setPassword(String password) {
         this.password = password;
     }
 
     /**
-     * »ñÈ¡êÇ³Æ
+     * è·å–æ˜µç§°
      *
-     * @return username - êÇ³Æ
+     * @return username - æ˜µç§°
      */
     public String getUsername() {
         return username;
     }
 
     /**
-     * ÉèÖÃêÇ³Æ
+     * è®¾ç½®æ˜µç§°
      *
-     * @param username êÇ³Æ
+     * @param username æ˜µç§°
      */
     public void setUsername(String username) {
         this.username = username;
     }
 
     /**
-     * »ñÈ¡×¢²áÊ±¼ä
+     * è·å–æ³¨å†Œæ—¶é—´
      *
-     * @return regtime - ×¢²áÊ±¼ä
+     * @return regtime - æ³¨å†Œæ—¶é—´
      */
     public Date getRegtime() {
         return regtime;
     }
 
     /**
-     * ÉèÖÃ×¢²áÊ±¼ä
+     * è®¾ç½®æ³¨å†Œæ—¶é—´
      *
-     * @param regtime ×¢²áÊ±¼ä
+     * @param regtime æ³¨å†Œæ—¶é—´
      */
     public void setRegtime(Date regtime) {
         this.regtime = regtime;

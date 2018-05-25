@@ -9,6 +9,5 @@ import java.util.List;
  * @Author wang926454
  * @Date 2018/5/25 10:02
  */
-public interface IUserService{
-    public List<User> selectAll();
+public interface IUserService extends IBaseService<User>{
 }

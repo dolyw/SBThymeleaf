@@ -40,3 +40,9 @@ pagehelper:
     helper-dialect: mysql
     reasonable: 'true'
     support-methods-arguments: 'true'
+
+mapper:
+    not-empty: true
+#   mappers:
+#    - tk.mybatis.mapper.common.Mapper
+#    - tk.mybatis.mapper.common.Mapper2
