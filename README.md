@@ -2,19 +2,20 @@
 
 #### 项目介绍
 
-1. SpringBoot HelloWorld示例
+1. SpringBoot整合Mybatis示例
 
 #### 软件架构
 
-1. SpringBoot
+1. SpringBoot + Mybatis
 
 #### 安装教程
 
-1. 正常启动即可
+1. 解压后执行src\main\resources\sql\MySQL.sql脚本创建数据库和表
+2. 正常启动即可
 
 #### 使用说明
 
-1. SpringBoot入门
+1. SpringBoot整合Mybatis示例
 
 #### 参与贡献
 
