@@ -3,10 +3,11 @@
 #### 项目介绍
 
 1. SpringBoot整合Mybatis示例
+2. 继续整合分页插件PageHelper
 
 #### 软件架构
 
-1. SpringBoot + Mybatis
+1. SpringBoot + Mybatis + PageHelper
 
 #### 安装教程
 
@@ -15,7 +16,7 @@
 
 #### 使用说明
 
-1. SpringBoot整合Mybatis示例
+1. SpringBoot整合系列
 
 #### 参与贡献
 

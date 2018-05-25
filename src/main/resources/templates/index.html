@@ -69,35 +69,12 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
-            <div class="layui-form">
-                <table class="layui-table">
-                    <!--<colgroup>
-                        <col width="150">
-                        <col width="150">
-                        <col width="200">
-                        <col width="200">
-                        <col width="200">
-                    </colgroup>-->
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>帐号</th>
-                        <th>密码</th>
-                        <th>用户名</th>
-                        <th>注册时间</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="user:${users}">
-                        <td th:text="${user.id}">1</td>
-                        <td th:text="${user.account}">wang926454</td>
-                        <td th:text="${user.password}">123456</td>
-                        <td th:text="${user.username}">傻荔枝</td>
-                        <td th:text="${#dates.format(user.regtime, 'yyyy-MM-dd HH:mm:ss')}">1989-10-14 19:19:19</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div class="layui-btn-group toolBar">
+                <button class="layui-btn" data-type="getCheckData">获取选中行数据</button>
+                <button class="layui-btn" data-type="getCheckLength">获取选中数目</button>
+                <button class="layui-btn" data-type="isAll">验证是否全选</button>
             </div>
+            <table id="demo" lay-filter="test"></table>
         </div>
     </div>
 
@@ -107,12 +84,71 @@
     </div>
 </div>
 <script th:src="@{vendor/layui/layui.js}"></script>
-<script>
+<script type="text/html" id="timeTpl">
+    {{ timeFormat(d.regtime) }}
+</script>
+<script th:inline="javascript">
+
     //JavaScript代码区域
     layui.use('element', function(){
         var element = layui.element;
-
     });
+    // Table
+    var util;
+    var getListUrl = /*[[@{getUsers}]]*/;
+    layui.use(['table','util','layer'], function(){
+        var table = layui.table;
+        util = layui.util;
+        //第一个实例
+        table.render({
+            elem: '#demo'
+            ,cellMinWidth: 80 // 列宽自动分配
+            ,height: 'full-200' //
+            ,limits: [5, 15, 30]
+            ,limit: 15 //每页默认显示的数量
+            ,url: getListUrl //数据接口
+            ,page: true //开启分页
+            ,cols: [[ //表头
+                {type:'checkbox'}
+                ,{field: 'id', title: 'ID', align: 'center', sort: true}
+                ,{field: 'account', title: '帐号', align: 'center', sort: true}
+                ,{field: 'password', title: '密码', align: 'center', sort: true}
+                ,{field: 'username', title: '用户名', align: 'center', sort: true}
+                ,{field: 'regtime', title: '注册时间', align: 'center', sort: true, templet: '#timeTpl'}
+            ]]
+        });
+
+        //监听表格复选框选择
+        table.on('checkbox(demo)', function(obj){
+            console.log(obj)
+        });
+
+        var $ = layui.$, active = {
+            getCheckData: function(){ //获取选中数据
+                var checkStatus = table.checkStatus('demo')
+                    ,data = checkStatus.data;
+                layer.alert(JSON.stringify(data));
+            }
+            ,getCheckLength: function(){ //获取选中数目
+                var checkStatus = table.checkStatus('demo')
+                    ,data = checkStatus.data;
+                layer.msg('选中了：'+ data.length + ' 个');
+            }
+            ,isAll: function(){ //验证是否全选
+                var checkStatus = table.checkStatus('demo');
+                layer.msg(checkStatus.isAll ? '全选': '未全选')
+            }
+        };
+        $('.toolBar .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+
+    // 时间格式化
+    function timeFormat(t){
+        return util.toDateString(t);
+    }
 </script>
 </body>
 </html>
