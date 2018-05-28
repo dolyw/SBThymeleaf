@@ -34,8 +34,8 @@
 #### 使用说明
 
 1. SpringBoot整合系列
-2. Swagger UI:[http://localhost:8080/swagger-ui.html/](http://localhost:8080/swagger-ui.html/)
-3. Swagger UI Layer:[http://localhost:8080/docs.html/](http://localhost:8080/docs.html/)
+2. Swagger UI:[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+3. Swagger UI Layer:[http://localhost:8080/docs.html](http://localhost:8080/docs.html)
 
 #### 参与贡献
 
