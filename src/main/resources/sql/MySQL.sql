@@ -1,16 +1,15 @@
-
 create database sbthymeleaf;
 
 use sbthymeleaf;
 
-/*ÓÃ»§±í*/
+/*ç”¨æˆ·è¡¨*/
 create table user (
 id int primary key auto_increment COMMENT "ID",
-account varchar(20)  COMMENT "ÕÊºÅ",
-password varchar(20) COMMENT "ÃÜÂë",
-username varchar(20) COMMENT "êÇ³Æ",
-regtime datetime not null COMMENT "×¢²áÊ±¼ä"
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT "ÓÃ»§±í";
+account varchar(20)  COMMENT "å¸å·",
+password varchar(20) COMMENT "å¯†ç ",
+username varchar(20) COMMENT "æ˜µç§°",
+regtime datetime not null COMMENT "æ³¨å†Œæ—¶é—´"
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT "ç”¨æˆ·è¡¨";
 
 insert into user values(null,"admin","admin","admin",now());
 

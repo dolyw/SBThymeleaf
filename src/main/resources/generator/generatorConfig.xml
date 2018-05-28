@@ -45,10 +45,13 @@
                         password="root">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.wang.entity" targetProject="src/main/java"/>
+        <!-- Model -->
+        <!--<javaModelGenerator targetPackage="com.wang.entity" targetProject="src/main/java"/>-->
 
+        <!-- Mapper XML -->
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
 
+        <!-- Mapper -->
         <javaClientGenerator targetPackage="com.wang.mapper" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 

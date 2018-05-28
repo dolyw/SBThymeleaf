@@ -1,35 +1,46 @@
 package com.wang.entity;
 
+import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = -7097812082674545481L;
+
     /**
      * ID
      */
     @Id
     @GeneratedValue(generator = "JDBC")
+    @ApiModelProperty(value="ID",name="id")
     private Integer id;
 
     /**
      * 帐号
      */
+    @ApiModelProperty(value="帐号",name="account")
     private String account;
 
     /**
      * 密码
      */
+    @ApiModelProperty(value="密码",name="password")
     private String password;
 
     /**
      * 昵称
      */
+    @ApiModelProperty(value="用户名",name="username")
     private String username;
 
     /**
      * 注册时间
      */
+    @ApiModelProperty(value="注册时间",name="regtime")
     private Date regtime;
 
     /**
