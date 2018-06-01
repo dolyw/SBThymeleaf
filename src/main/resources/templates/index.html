@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>layout 后台大布局 - Layui</title>
-    <link rel="stylesheet" th:href="@{vendor/layui/css/layui.css}"/>
+    <link rel="stylesheet" th:href="@{/vendor/layui/css/layui.css}"/>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -111,7 +111,7 @@
     </form>
 </div>
 
-<script th:src="@{vendor/layui/layui.js}"></script>
+<script th:src="@{/vendor/layui/layui.js}"></script>
 <script type="text/html" id="timeTpl">
     {{ timeFormat(d.regtime) }}
 </script>
@@ -123,7 +123,7 @@
     });
     // Table
     var util;
-    var getListUrl = /*[[@{getUsers}]]*/;
+    var getListUrl = /*[[@{/getUsers}]]*/;
     layui.use(['table','util','layer'], function(){
         var table = layui.table;
         util = layui.util;
@@ -179,7 +179,7 @@
                             //$("#addOrUpdateForm").submit();
                             $.ajax({
                                 type: 'POST',
-                                url: /*[[@{addOrUpdate}]]*/,
+                                url: /*[[@{/addOrUpdate}]]*/,
                                 data: $('#addOrUpdateForm').serialize(),
                                 //dataType: 'json',
                                 success: function (data) {
@@ -231,7 +231,7 @@
                         success: function(layero, index){
                             $.ajax({
                                 type: 'POST',
-                                url: /*[[@{findById}]]*/,
+                                url: /*[[@{/findById}]]*/,
                                 data: {
                                     jsons : JSON.stringify(data)
                                 },
@@ -305,7 +305,7 @@
                     //layer.msg('删除了：'+ data.length + ' 个');
                     $.ajax({
                         type: 'POST',
-                        url: /*[[@{delete}]]*/,
+                        url: /*[[@{/delete}]]*/,
                         data: {
                             jsons : JSON.stringify(data)
                         },
