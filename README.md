@@ -19,7 +19,7 @@
                                  mvn mybatis-generator:generate
                                  ```(前提是配置了mvn)(IDEA可以直接在Maven窗口Plugins中双击执行)，创建Entity(Model)和Mapper后正常启动即可
 3. 新增Swagger，因为Entity(Model)的有Swagger注解所以将Mybatis Geneator配置文件src\main\resources\generator\generatorConfig.xml中Entity(Model)的自动生成代码注释了
-```
+```Xml
 <!-- Model -->
 <!--<javaModelGenerator targetPackage="com.wang.entity" targetProject="src/main/java"/>-->
 
