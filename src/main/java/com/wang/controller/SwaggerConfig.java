@@ -31,7 +31,7 @@ public class SwaggerConfig /*extends WebMvcConfigurerAdapter*/ {
      *  不知道为什么，这也是springboot的一个缺点（菜鸟觉得的）
      * @param registry
      */
-    /*@Override
+    /**@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/");
@@ -48,7 +48,8 @@ public class SwaggerConfig /*extends WebMvcConfigurerAdapter*/ {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.wang.controller")) // 注意修改此处的包名
+                // 注意修改此处的包名
+                .apis(RequestHandlerSelectors.basePackage("com.wang.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .ignoredParameterTypes(ApiIgnore.class);
@@ -56,9 +57,11 @@ public class SwaggerConfig /*extends WebMvcConfigurerAdapter*/ {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("接口列表") // 任意，请稍微规范点
-                .description("接口测试") // 任意，请稍微规范点
-                .termsOfServiceUrl("http://localhost:8080/swagger-ui.html") // 将“url”换成自己的ip:port
+                // 任意，请稍微规范点
+                .title("接口列表")
+                .description("接口测试")
+                // 换成自己的ip:port
+                .termsOfServiceUrl("http://localhost:8080/swagger-ui.html")
                 .version("1.0.0")
                 .build();
     }

@@ -53,9 +53,8 @@ public class UserController {
         PageHelper.startPage(page, limit);
         List<User> users = userService.selectAll();
         PageInfo<User> selectPage = new PageInfo<User>(users);
-        Map map = new HashMap();
+        Map map = new HashMap(16);
         map.put("code", "0");
-        //map.put("msg", "");
         map.put("count", selectPage.getTotal());
         map.put("data", selectPage.getList());
         return map;
@@ -85,10 +84,10 @@ public class UserController {
     @ApiOperation(value = "删除用户", httpMethod = "POST", notes = "详细描述：接收批量用户JSON信息删除用户")
     public void delete(String jsons){
         List<User> users = JsonListUtil.jsonToList(jsons, User.class);
-        /*for (User user: users) {
+        /**for (User user: users) {
             userService.delete(user);
         }*/
-        for (int i = 0; i < users.size(); i++) {
+        for (int i = 0,len = users.size(); i < len; i++) {
             userService.delete(users.get(i));
         }
     }
@@ -100,7 +99,7 @@ public class UserController {
     public Map findById(String jsons){
         List<User> users = JsonListUtil.jsonToList(jsons, User.class);
         User user = userService.selectOne(users.get(0));
-        Map map = new HashMap();
+        Map map = new HashMap(16);
         map.put("obj", user);
         return map;
     }

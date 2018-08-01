@@ -6,6 +6,11 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
+/**
+ * TODO：
+ * @author Wang926454
+ * @date 2018/8/1 10:38
+ */
 @Table(name = "user")
 public class User implements Serializable {
 
