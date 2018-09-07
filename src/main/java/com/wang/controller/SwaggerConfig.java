@@ -28,10 +28,11 @@ public class SwaggerConfig /*extends WebMvcConfigurerAdapter*/ {
      *  <!--swagger资源配置-->
      *  <mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>
      *  <mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>
-     *  不知道为什么，这也是springboot的一个缺点（菜鸟觉得的）
-     * @param registry
+     *  不知道为什么，这也是SpringBoot的一个缺点（菜鸟觉得的）
      */
-    /**@Override
+
+    /* FIXME: SpringBoot添加资源过滤
+    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/");

@@ -84,12 +84,13 @@ public class UserController {
     @ApiOperation(value = "删除用户", httpMethod = "POST", notes = "详细描述：接收批量用户JSON信息删除用户")
     public void delete(String jsons){
         List<User> users = JsonListUtil.jsonToList(jsons, User.class);
-        /**for (User user: users) {
+        for (User user: users) {
             userService.delete(user);
-        }*/
+        }
+        /* FIXME: 使用forEach与for写法
         for (int i = 0,len = users.size(); i < len; i++) {
             userService.delete(users.get(i));
-        }
+        }*/
     }
 
     @ResponseBody
