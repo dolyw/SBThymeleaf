@@ -1,5 +1,6 @@
 package com.wang.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
@@ -46,6 +47,7 @@ public class User implements Serializable {
      * 注册时间
      */
     @ApiModelProperty(value="注册时间",name="regtime")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date regtime;
 
     /**
